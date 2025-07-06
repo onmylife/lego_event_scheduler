@@ -1,0 +1,29 @@
+---
+layout: default
+title: 레고 행사 월간 달력
+---
+
+<div class="container">
+    <h1>{{ page.title }}</h1>
+
+    <div class="controls" style="text-align: center; margin-bottom: 20px;">
+        <button id="prevMonth">이전 달</button>
+        <span id="currentMonthYear" style="margin: 0 20px; font-size: 1.5em;"></span>
+        <button id="nextMonth">다음 달</button>
+    </div>
+
+    <div id="calendar-grid">
+        <div class="grid-header">날짜</div>
+        <div class="grid-header">레고공홈</div>
+        <div class="grid-header">레고스토어A</div>
+        <div class="grid-header">레고스토어B</div>
+        <!-- 날짜 행 및 이벤트가 JavaScript에 의해 여기에 동적으로 생성됩니다. -->
+    </div>
+</div>
+
+<script>
+    // Liquid를 사용하여 Jekyll 데이터 파일을 JavaScript 변수로 가져오기
+    // script.js에서 이 변수를 사용합니다.
+    window.eventsData = {{ site.data.events | jsonify }};
+</script>
+<!-- script.js는 _layouts/default.html에서 로드됩니다. -->
